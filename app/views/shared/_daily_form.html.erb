@@ -1,0 +1,27 @@
+<%= form_with(model: daily_report) do |form| %>
+  <div>
+    <%= form.label :content, 'フリーコメント' %>
+    <%= form.text_area :content %>
+  </div>
+
+  <div>
+    <%= form.label :todo, 'ToDo' %>
+    <%= form.text_area :todo %>
+  </div>
+
+  <div>
+    <%= form.label :stepup, 'StepUP' %>
+    <%= form.text_area :stepup %>
+  </div>
+
+  <div>
+    <%= form.label :ktp, 'KTP' %>
+    <%= form.text_area :ktp %>
+  </div>
+
+  <%= form.submit '保存' %>
+<% end %>
+
+<% if daily_report.persisted? && daily_report.status == 'draft' %>
+  <%= button_to '公開する', publish_daily_report_path(daily_report), method: :post %>
+<% end %>
