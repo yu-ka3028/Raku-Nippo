@@ -22,6 +22,3 @@
   <%= form.submit '保存' %>
 <% end %>
 
-<% if daily_report.persisted? && daily_report.status == 'draft' %>
-  <%= button_to '公開する', publish_daily_report_path(daily_report), method: :post %>
-<% end %>
