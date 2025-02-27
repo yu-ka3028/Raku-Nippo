@@ -13,5 +13,5 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   root 'home#index'
-  resources :daily_reports, only: [:new, :create]
+  resources :daily_reports, only: [:new, :create, :index]
 end

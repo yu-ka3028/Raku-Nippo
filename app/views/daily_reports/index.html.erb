@@ -1,0 +1,17 @@
+<h1>日報一覧</h1>
+
+<div class="daily-reports-container">
+  <%= link_to '新しい日報を作成', new_daily_report_path %>
+
+  <% @daily_reports.each do |daily_report| %>
+    <class="daily-report">
+      <h2><%= daily_report.created_at.strftime('%Y年%m月%d日') %></h2>
+      <p><%= daily_report.content %></p>
+      <p><%= daily_report.todo %></p>
+      <p><%= daily_report.stepup %></p>
+      <p><%= daily_report.ktp %></p>
+      <p><%= daily_report.status %></p>
+      <p><%= link_to '詳細', daily_reports_path(daily_report) %></p>
+    </class>
+  <% end %>
+</div>

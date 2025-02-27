@@ -12,6 +12,13 @@ class DailyReportsController < ApplicationController
     end
   end
 
+  def index
+    @daily_reports = DailyReport.all
+    @daily_reports.each do |daily_report|
+      puts daily_report.content
+    end
+  end
+
   private
 
   def daily_report_params
